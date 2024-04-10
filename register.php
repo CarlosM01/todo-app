@@ -15,12 +15,8 @@ if (isset($_POST['register_user'])){
             die('Query failed');
         }
         
-        session_unset();
         header("Location: login.php"); 
     } else {
-        $_SESSION['message'] = 'Passwords do not match';
-        $_SESSION['message_type'] = 'danger';
-    
         header("Location: register.php"); 
     }
 

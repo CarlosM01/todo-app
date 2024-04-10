@@ -4,7 +4,7 @@ use LDAP\Result;
 
 include("db.php");
 
-include("controller/login_controller.php")
+include("controller/sign_in.php")
 
 ?>
 

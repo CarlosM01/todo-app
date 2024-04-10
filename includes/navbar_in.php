@@ -2,17 +2,11 @@
 
 use LDAP\Result;
 
-if(isset($_GET['user'])){
-    $id_user = $_GET['user'];
-    
-    $query = "SELECT user_name FROM users WHERE id_user = '$id_user'";
-    $result = mysqli_query($connection, $query);
+session_start();
+if(empty($_SESSION['id_user']))[
+  header("Location: login.php")
+]
 
-    if(mysqli_num_rows($result) == 1){
-        $row = mysqli_fetch_array($result);
-        $user_name = $row['user_name'];
-    }
-}
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -24,10 +18,10 @@ if(isset($_GET['user'])){
       <a class="navbar-brand" href="app.php?user=<?php echo $id_user ?>">To Do App</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link disabled" aria-current="page">Welcome <?php echo $user_name ?></a>
+          <a class="nav-link disabled" aria-current="page">Welcome <?php echo $_SESSION['user_name'] ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="login.php">Sign out</a>
+          <a class="nav-link active" aria-current="page" href="/todo_app/controller/sign_out.php">Sign out</a>
         </li>
       </ul>
       

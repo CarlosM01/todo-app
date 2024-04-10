@@ -1,36 +1,5 @@
-<?php 
-
-include("db.php");
-
-
-
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $query = "SELECT * FROM task WHERE id_task = '$id'";
-    $result = mysqli_query($connection, $query);
-
-    if(mysqli_num_rows($result) == 1){
-        $row = mysqli_fetch_array($result);
-        $title = $row['title'];
-        $description = $row['description'];
-        $id_user = $row['id_user'];
-    }
-}
-
-if (isset($_POST['update'])){
-    $id = $_GET['id'];
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-
-    $query = "UPDATE task SET title = '$title', description = '$description' WHERE id_task = '$id'";
-    mysqli_query($connection, $query);
-
-    $_SESSION['message'] = 'Task updated';
-    $_SESSION['message_type'] = 'warning';
-    header("Location: app.php?user=$id_user");
-}
-    
-?>
+<?php include("db.php"); ?>
+<?php include("controller/edit_controller.php"); ?>
 
 
 <?php include("includes/header.php") ?>

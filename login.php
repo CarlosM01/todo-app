@@ -17,6 +17,12 @@ include("controller/sign_in.php")
     <div class="row justify-content-md-center">
         <div class="col col-sm-4">
             <form action="login.php" method="POST">
+                <?php if (!empty($_SESSION['alert_login'])){ ?>
+                <div class="alert alert-warning" role="alert">
+                    <?php echo $_SESSION['alert_login'] ?>
+                </div>
+                <?php } ?>
+                
                 <div class="mb-3">
                     <label for="inputEmail" class="form-label">Email address</label>
                     <input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="email@example.com">

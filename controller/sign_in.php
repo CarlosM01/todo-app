@@ -11,7 +11,7 @@ if(isset($_POST['sign_in'])){
             $_SESSION['email']=$data->email;
             header("Location: /todo_app/home.php");
         } else {
-            echo "<div class='alert danger'>Denied Access</div>";
+            $_SESSION['alert_login'] = 'Wrong Email or password.';
         }
     }
 }

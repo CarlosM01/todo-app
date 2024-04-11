@@ -10,7 +10,7 @@ if (isset($_POST['register_user'])){
 
     if ($password === $passwordConfirmation){
         $query = "INSERT INTO users(user_name, email, password) VALUES('$user', '$email', '$password')";
-        $result = mysqli_query($connection, $query);
+        $result = mysqli_query($conn, $query);
         if (!$result){
             die('Query failed');
         }

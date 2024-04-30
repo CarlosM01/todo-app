@@ -2,7 +2,7 @@
 
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $query = "SELECT * FROM task WHERE id_task = '$id'";
+    $query = "SELECT * FROM tasks WHERE id_task = '$id'";
     $result = mysqli_query($conn, $query);
 
     if(mysqli_num_rows($result) == 1){
@@ -18,10 +18,10 @@ if (isset($_POST['update'])){
     $title = $_POST['title'];
     $description = $_POST['description'];
 
-    $query = "UPDATE task SET title = '$title', description = '$description' WHERE id_task = '$id'";
+    $query = "UPDATE tasks SET title = '$title', description = '$description' WHERE id_task = '$id'";
     mysqli_query($conn, $query);
 
-    header("Location: /todo_app/home.php");
+    header("Location: /home.php");
 }
     
 ?>

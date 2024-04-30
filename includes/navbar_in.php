@@ -21,7 +21,7 @@ if(empty($_SESSION['id_user']))[
           <a class="nav-link disabled" aria-current="page">Welcome <?php echo $_SESSION['user_name'] ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/todo_app/controller/sign_out.php">Sign out</a>
+          <a class="nav-link active" aria-current="page" href="/controller/sign_out.php">Sign out</a>
         </li>
       </ul>
       

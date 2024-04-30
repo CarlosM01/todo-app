@@ -8,7 +8,7 @@
 
             <div class="col-md-4">
                 <div class="card card-body">
-                    <form action="/todo_app/controller/save_task.php" method="POST">
+                    <form action="/controller/save_task.php" method="POST">
                         <div class="form-group">
                             <input type="text" name="title" class="form-control" placeholder="Task Title" autofocus/>
                         </div>
@@ -32,7 +32,7 @@
                 <tbody>
                     <?php 
                     $id_user = $_SESSION['id_user'];
-                    $query = "SELECT * FROM task WHERE id_user='$id_user'";
+                    $query = "SELECT * FROM tasks WHERE id_user='$id_user'";
                     $result_tasks = mysqli_query($conn, $query);                    
 
                     while($row = mysqli_fetch_array($result_tasks)) { ?> 

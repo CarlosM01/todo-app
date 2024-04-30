@@ -11,7 +11,7 @@ if (isset($_GET['id'])){
         die("Query failed");
     }
 
-    header("Location: /todo_app/home.php");
+    header("Location: /home.php");
 }
 
 ?>

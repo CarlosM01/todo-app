@@ -9,7 +9,7 @@ if(isset($_POST['sign_in'])){
             $_SESSION['id_user']=$data->id_user;
             $_SESSION['user_name']=$data->user_name;
             $_SESSION['email']=$data->email;
-            header("Location: /todo_app/home.php");
+            header("Location: /home.php");
         } else {
             $_SESSION['alert_login'] = 'Wrong Email or password.';
         }
